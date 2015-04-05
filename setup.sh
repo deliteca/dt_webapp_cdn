@@ -16,8 +16,14 @@ pip install -r $pip_reqs
 if [ -z $NODE_PATH ]; then
     ln -s /opt/local/bin/python2.7 $VIRTUAL_ENV/bin/python2
     nodeenv -p
-    npm install -g generator-angular --save
     npm install -g grunt-cli --save
+    npm install -g grunt-init --save
+    npm install -g bower --save
+    npm install -g grunt --save
+    npm install -g typescript --save
+    npm install -g generator-angular --save
+    npm install grunt --save-dev
+    mkdir angular
 fi
 
 deactivate
