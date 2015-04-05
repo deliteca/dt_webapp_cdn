@@ -21,9 +21,13 @@ if [ -z $NODE_PATH ]; then
     npm install -g bower --save
     npm install -g grunt --save
     npm install -g typescript --save
+    npm install tsd@next -g
     npm install -g generator-angular --save
     npm install grunt --save-dev
-    mkdir angular
+    mkdir -p angular/typescript
+    pushd angular/typescript
+    tsd query angular --resolve --action install
+    popd
 fi
 
 deactivate
