@@ -1,0 +1,21 @@
+{
+  "name": "dt_webapp_frontend",
+  "description": "DT Web Front-End Application",
+  "version": "0.0.0",
+  "author": {
+    "name": "Aaron Diep"
+  },
+  "repository": {
+  },
+  "bugs": {
+    "url": "http://delite.ca/trac/dev/dtwebapp"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "*"
+  }
+}
