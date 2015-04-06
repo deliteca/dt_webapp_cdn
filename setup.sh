@@ -24,6 +24,7 @@ if [ -z $NODE_PATH ]; then
     npm install tsd@next -g
     npm install -g generator-angular --save
     npm install grunt --save-dev
+    npm install -g typescript-tools --save-dev
     mkdir -p angular/typescript
     pushd angular/typescript
     tsd query angular --resolve --action install
