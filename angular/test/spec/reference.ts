@@ -1,4 +1,4 @@
-/// <reference path="../../typescript/app.ts" />
+/// <reference path="../../typescript/reference.ts" />
 //grunt-start
 /// <reference path="controllers/about.ts" />
 /// <reference path="controllers/main.ts" />
