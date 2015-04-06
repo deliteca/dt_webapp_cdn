@@ -22,7 +22,9 @@ module.exports = function (grunt) {
   };
 
   // load grunt-ts task
-  grunt.loadNpmTasks('grunt-ts');
+//  grunt.loadNpmTasks('grunt-ts');
+//  grunt.loadNpmTasks('grunt-karma');
+//  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -67,6 +69,10 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+      },
+      karma: {
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.js', 'test/spec/{,*/}*.js'],
+        tasks: ['karma:continuous:run']
       }
     },
 
@@ -422,9 +428,14 @@ module.exports = function (grunt) {
 
     // Test settings
     karma: {
-      unit: {
+      options: {
         configFile: 'test/karma.conf.js',
+      },
+      unit: {
         singleRun: true
+      },
+      continuous: {
+        background: true
       }
     },
 
@@ -453,6 +464,7 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
+      'karma:continuous:start',
       'autoprefixer:server',
       'connect:livereload',
       'watch'
@@ -497,4 +509,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', ['ts:dev']);
+
+  grunt.registerTask('tdd', ['karma:continuous:start', 'watch:karma']);
 };
