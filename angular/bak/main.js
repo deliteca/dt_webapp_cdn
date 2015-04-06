@@ -7,6 +7,7 @@
  * # MainCtrl
  * Controller of the angularApp
  */
+
 angular.module('angularApp')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [

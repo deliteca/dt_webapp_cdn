@@ -46,8 +46,8 @@ module.exports = function (grunt) {
         }
       },
       ts: {
-        files: ['typescript/{,*/}*.ts'],
-        tasks: ['ts:dev'],
+        files: ['typescript/{,*/}*.ts', 'test/spec/{,*/}*.ts'],
+        tasks: ['ts:dev', 'ts:test'],
       },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
@@ -451,7 +451,17 @@ module.exports = function (grunt) {
                 //outDir: 'app',              // The destination for javascript files 
                 //amdloader: 'app/loader.js', // Use amd to load                
             },
-        }
+        test: {                          // a particular target
+            src: ['test/**/*.ts'], // The source typescript files, http://gruntjs.com/configuring-tasks#files
+            html: ['typescript/**/*.html'], // The source html files, https://github.com/basarat/grunt-ts#html-2-typescript-support
+            reference: './test/spec/reference.ts',  // If specified, generate this file that you can use for your reference management
+            // watch: 'typescript',
+
+            out: 'test/spec/tsc-out.js',
+                //outDir: 'app',              // The destination for javascript files 
+                //amdloader: 'app/loader.js', // Use amd to load                
+            },
+         }
   });
 
 
@@ -464,9 +474,9 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
-      'karma:continuous:start',
       'autoprefixer:server',
       'connect:livereload',
+      'karma:continuous:start',
       'watch'
     ]);
   });
@@ -508,7 +518,7 @@ module.exports = function (grunt) {
     'build'
   ]);
 
-  grunt.registerTask('default', ['ts:dev']);
+  grunt.registerTask('default', ['ts:dev', 'ts:test']);
 
   grunt.registerTask('tdd', ['karma:continuous:start', 'watch:karma']);
 };
