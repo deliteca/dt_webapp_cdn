@@ -488,6 +488,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'ts:test',
     'wiredep',
     'concurrent:test',
     'autoprefixer',
@@ -497,6 +498,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'ts:dev',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',

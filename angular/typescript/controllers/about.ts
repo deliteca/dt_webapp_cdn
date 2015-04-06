@@ -2,18 +2,20 @@
 
 module dt {
   'use strict';
+  export module webapp {
+    'use strict';
+    interface IAboutCtrlScope extends ng.IScope {
+      awesomeThings: Array<string>;
+    }
 
-  interface IAboutCtrlScope extends ng.IScope {
-    awesomeThings: Array<string>;
-  }
-
-  export class AboutCtrl {
-    constructor(public $scope: IAboutCtrlScope) {
-      $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-      ];
+    export class AboutCtrl {
+      constructor(private $scope: IAboutCtrlScope) {
+        $scope.awesomeThings = [
+          'HTML5 Boilerplate',
+          'AngularJS',
+          'Karma'
+        ];
+      }
     }
   }
 }
