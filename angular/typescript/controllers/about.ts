@@ -2,7 +2,7 @@
 
 module dt {
   'use strict';
-  export module webapp {
+  export module webapp.controllers {
     interface IAboutCtrlScope extends ng.IScope {
       awesomeThings: Array<string>;
     }

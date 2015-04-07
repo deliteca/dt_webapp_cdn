@@ -12,7 +12,7 @@ module dt {
     // Initialize the controller and a mock scope
     beforeEach(inject(function ($rootScope) {
       scope = $rootScope.$new();
-      ctrl = new webapp.MainCtrl(scope);
+      ctrl = new webapp.controllers.MainCtrl(scope);
     }));
 
     it('should attach a list of awesomeThings to the scope', function () {

@@ -4,8 +4,8 @@ module dt {
   'use strict';
   export module webapp {
     ng
-    .controller('MainCtrl', MainCtrl)
-    .controller('AboutCtrl', AboutCtrl);
+    .controller('MainCtrl', controllers.MainCtrl)
+    .controller('AboutCtrl', controllers.AboutCtrl);
   }
 }
 
