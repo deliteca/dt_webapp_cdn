@@ -456,7 +456,7 @@ module.exports = function (grunt) {
                 //amdloader: 'app/loader.js', // Use amd to load                
             },
         test: {                          // a particular target
-            src: ['test/**/*.ts'], // The source typescript files, http://gruntjs.com/configuring-tasks#files
+            src: ['test/**/*.ts', 'typescript/**/*.ts'], // The source typescript files, http://gruntjs.com/configuring-tasks#files
             html: ['typescript/**/*.html'], // The source html files, https://github.com/basarat/grunt-ts#html-2-typescript-support
             reference: './test/spec/reference.ts',  // If specified, generate this file that you can use for your reference management
             // watch: 'typescript',

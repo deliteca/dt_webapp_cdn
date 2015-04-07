@@ -1,9 +1,8 @@
 //grunt-start
 /// <reference path="app.ts" />
-/// <reference path="controllers/about.ts" />
-/// <reference path="controllers/controllers.ts" />
+/// <reference path="components/user-greeting.ts" />
 /// <reference path="controllers/main.ts" />
-/// <reference path="routes/routes.ts" />
+/// <reference path="services/user-service.ts" />
 /// <reference path="typings/angularjs/angular-animate.d.ts" />
 /// <reference path="typings/angularjs/angular-cookies.d.ts" />
 /// <reference path="typings/angularjs/angular-mocks.d.ts" />
