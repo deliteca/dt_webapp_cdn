@@ -3,7 +3,6 @@
 module dt {
   'use strict';
   export module webapp {
-    'usestrict';
     ng
     .config(function ($routeProvider) {
       $routeProvider
