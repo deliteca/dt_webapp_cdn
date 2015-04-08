@@ -6,7 +6,6 @@
 /// <reference path="../../typescript/components/editable-user-name.ts" />
 /// <reference path="../../typescript/components/user-greeting-message.ts" />
 /// <reference path="../../typescript/components/user-greeting.ts" />
-/// <reference path="../../typescript/config/register.ts" />
 /// <reference path="../../typescript/services/user-service.ts" />
 /// <reference path="../../typescript/typings/angularjs/angular-animate.d.ts" />
 /// <reference path="../../typescript/typings/angularjs/angular-cookies.d.ts" />

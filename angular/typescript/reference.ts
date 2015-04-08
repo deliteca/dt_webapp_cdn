@@ -3,7 +3,6 @@
 /// <reference path="components/editable-user-name.ts" />
 /// <reference path="components/user-greeting-message.ts" />
 /// <reference path="components/user-greeting.ts" />
-/// <reference path="config/register.ts" />
 /// <reference path="services/user-service.ts" />
 /// <reference path="typings/angularjs/angular-animate.d.ts" />
 /// <reference path="typings/angularjs/angular-cookies.d.ts" />
