@@ -15,7 +15,14 @@ module dt {
       public get() : ng.IPromise< IUserData > {
         var deferred = this.$q.defer();
         var data : IUserData = {name: 'bob'};
+        // send data to handler in then
         deferred.resolve(data);
+        return deferred.promise;
+      }
+
+      public save(userData : IUserData) : ng.IPromise< IUserData > {
+        var deferred = this.$q.defer();
+        deferred.resolve(userData);
         return deferred.promise;
       }
     }
