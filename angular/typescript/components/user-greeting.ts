@@ -33,9 +33,9 @@ module dt {
       }
     }
 
-    ng.controller('userGreetingCtrl', MyController);
+    _ng.controller('userGreetingCtrl', MyController);
 
-    ng.directive('userGreeting', () => new UserGreeting());
+    _ng.directive('userGreeting', () => new UserGreeting());
   }
 
 }

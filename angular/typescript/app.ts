@@ -3,7 +3,7 @@
 module dt {
   'use strict';
   export module webapp {
-    export var ng = angular.module('angularApp', [
+    export var _ng = angular.module('angularApp', [
       'ngAnimate',
       'ngCookies',
       'ngResource',

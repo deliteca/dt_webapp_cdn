@@ -5,7 +5,7 @@ module dt {
 
   export module webapp {
     // Register routes
-    ng
+    _ng
       .config(function ($routeProvider) {
         $routeProvider
         .when('/', {

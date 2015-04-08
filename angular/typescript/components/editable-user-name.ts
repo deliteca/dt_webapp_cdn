@@ -60,9 +60,9 @@ module dt {
 
     }
 
-    ng.controller('editableUserNameCtrl', MyController);
+    _ng.controller('editableUserNameCtrl', MyController);
 
-    ng.directive('editableUserName', () => new EditableUserName());
+    _ng.directive('editableUserName', () => new EditableUserName());
   }
 
 }

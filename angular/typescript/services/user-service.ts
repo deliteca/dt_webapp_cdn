@@ -32,6 +32,6 @@ module dt {
       }
     }
 
-    ng.service('userService', UserService);
+    _ng.service('userService', UserService);
   }
 }
