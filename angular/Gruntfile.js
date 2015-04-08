@@ -13,7 +13,7 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Time how long tasks take. Can help when optimizing build times
-  require('time-grunt')(grunt);
+//  require('time-grunt')(grunt);
 
   // Configurable paths for the application
   var appConfig = {
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 
   // load grunt-ts task
 //  grunt.loadNpmTasks('grunt-ts');
-//  grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-karma');
 //  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Define the configuration for all the tasks
@@ -428,14 +428,9 @@ module.exports = function (grunt) {
 
     // Test settings
     karma: {
-      options: {
-        configFile: 'test/karma.conf.js',
-      },
       unit: {
-        singleRun: true
-      },
-      continuous: {
-        background: true
+        configFile: 'test/karma.conf.js',
+        singleRun: true,
       }
     },
 
@@ -521,6 +516,4 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', ['ts:dev', 'ts:test']);
-
-  grunt.registerTask('tdd', ['karma:continuous:start', 'watch:karma']);
 };
