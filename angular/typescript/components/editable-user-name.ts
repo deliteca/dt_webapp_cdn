@@ -27,42 +27,42 @@ module dt {
 
       controllerAs = 'ctrl';
 
-  }
-
-  class MyController {
-    user;
-    userForm = null;
-    saveCallback : (any) => void;
-    constructor(private $element : ng.IDocumentService) {
     }
 
-    edit() {
-      this.userForm = _.extend({}, this.user);
+    class MyController {
+      user;
+      userForm = null;
+      saveCallback : (any) => void;
 
-      setTimeout(() => {
+      constructor(private $element : ng.IDocumentService) {
+      }
+
+      edit() {
+        this.userForm = _.extend({}, this.user);
+
+        setTimeout(() => {
           this.$element.find('input')[0].focus(); 
         }, 10);
+      }
+
+      reset() {
+        this.userForm = null;
+      }
+
+      isEditing() {
+        return !!this.userForm;
+      }
+
+      handleSave() {
+        this.saveCallback({user: this.userForm});
+        this.reset();
+      }
 
     }
 
-    reset() {
-      this.userForm = null;
-    }
+    ng.controller('editableUserNameCtrl', MyController);
 
-    isEditing() {
-      return !!this.userForm;
-    }
-
-    handleSave() {
-      this.saveCallback({user: this.userForm});
-      this.reset();
-    }
-
+    ng.directive('editableUserName', () => new EditableUserName());
   }
-
-  ng.controller('editableUserNameCtrl', MyController);
-
-  ng.directive('editableUserName', () => new EditableUserName());
-}
 
 }
