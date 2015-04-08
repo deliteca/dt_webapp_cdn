@@ -1,7 +1,7 @@
 /// <reference path="../reference.ts" />
 
 module dt {
-'use strict';
+  'use strict';
 
   export module webapp.directives {
 
@@ -15,7 +15,7 @@ module dt {
       bindToController = true;
 
       controllerAs = 'ctrl';
-     
+
     }
 
     class MyController {
