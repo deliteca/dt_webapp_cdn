@@ -3,7 +3,7 @@
 module dt {
   'use strict';
 
-  export module webapp.directives {
+  export module webApp.directives {
 
     export class UserGreetingMessage implements ng.IDirective {
       scope = {

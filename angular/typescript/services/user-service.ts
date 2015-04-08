@@ -6,7 +6,7 @@ interface IUserData {
 
 module dt {
 'use strict';
-  export module webapp.services {
+  export module webApp.services {
     export interface IUserService {
       get() : ng.IPromise< IUserData >;
       save(userData : IUserData) : ng.IPromise< IUserData >;
