@@ -1,6 +1,32 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "noImplicitAny": false,
-    }
+        "noImplicitAny": false
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./test/spec/reference.ts",
+        "./test/spec/typings/jasmine/jasmine.d.ts",
+        "./test/spec/typings/tsd.d.ts",
+        "./typescript/app.ts",
+        "./typescript/components/editable-user-name.ts",
+        "./typescript/components/user-greeting-message.ts",
+        "./typescript/components/user-greeting.ts",
+        "./typescript/config/register.ts",
+        "./typescript/reference.ts",
+        "./typescript/services/user-service.ts",
+        "./typescript/typings/angularjs/angular-animate.d.ts",
+        "./typescript/typings/angularjs/angular-cookies.d.ts",
+        "./typescript/typings/angularjs/angular-mocks.d.ts",
+        "./typescript/typings/angularjs/angular-resource.d.ts",
+        "./typescript/typings/angularjs/angular-route.d.ts",
+        "./typescript/typings/angularjs/angular-sanitize.d.ts",
+        "./typescript/typings/angularjs/angular.d.ts",
+        "./typescript/typings/jquery/jquery.d.ts",
+        "./typescript/typings/lodash/lodash.d.ts",
+        "./typescript/typings/tsd.d.ts"
+    ]
 }
