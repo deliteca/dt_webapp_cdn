@@ -9,7 +9,7 @@ module dt {
 
     export class MainCtrl {
       constructor(private $scope: IMainCtrlScope) {
-        $scope.awesomeThings = [
+        this.$scope.awesomeThings = [
           'HTML5 Boilerplate',
           'AngularJS',
           'Karma'
