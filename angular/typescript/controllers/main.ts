@@ -16,5 +16,7 @@ module dt {
         ];
       }
     }
+
+    webapp.ng.controller('MainCtrl', MainCtrl);
   }
 }
