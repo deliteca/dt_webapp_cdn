@@ -7,6 +7,11 @@ interface IUserData {
 module dt {
 'use strict';
   export module webapp.services {
+    export interface IUserService {
+      get() : ng.IPromise< IUserData >;
+      save(userData : IUserData) : ng.IPromise< IUserData >;
+  }
+
     export class UserService {
       constructor(private $q : ng.IQService) {
 
@@ -27,6 +32,6 @@ module dt {
       }
     }
 
-    ng.service('UserService', UserService);
+    ng.service('userService', UserService);
   }
 }

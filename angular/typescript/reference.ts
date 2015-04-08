@@ -1,5 +1,7 @@
 //grunt-start
 /// <reference path="app.ts" />
+/// <reference path="components/editable-user-name.ts" />
+/// <reference path="components/user-greeting-message.ts" />
 /// <reference path="components/user-greeting.ts" />
 /// <reference path="config/register.ts" />
 /// <reference path="controllers/main.ts" />
@@ -12,5 +14,6 @@
 /// <reference path="typings/angularjs/angular-sanitize.d.ts" />
 /// <reference path="typings/angularjs/angular.d.ts" />
 /// <reference path="typings/jquery/jquery.d.ts" />
+/// <reference path="typings/lodash/lodash.d.ts" />
 /// <reference path="typings/tsd.d.ts" />
 //grunt-end

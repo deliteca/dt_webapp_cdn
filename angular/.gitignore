@@ -6,3 +6,4 @@ bower_components
 .tscache
 *.map
 tsc-out.js
+tscommand-*.tmp.txt

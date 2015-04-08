@@ -4,6 +4,8 @@
 /// <reference path="typings/jasmine/jasmine.d.ts" />
 /// <reference path="typings/tsd.d.ts" />
 /// <reference path="../../typescript/app.ts" />
+/// <reference path="../../typescript/components/editable-user-name.ts" />
+/// <reference path="../../typescript/components/user-greeting-message.ts" />
 /// <reference path="../../typescript/components/user-greeting.ts" />
 /// <reference path="../../typescript/config/register.ts" />
 /// <reference path="../../typescript/controllers/main.ts" />
@@ -16,5 +18,6 @@
 /// <reference path="../../typescript/typings/angularjs/angular-sanitize.d.ts" />
 /// <reference path="../../typescript/typings/angularjs/angular.d.ts" />
 /// <reference path="../../typescript/typings/jquery/jquery.d.ts" />
+/// <reference path="../../typescript/typings/lodash/lodash.d.ts" />
 /// <reference path="../../typescript/typings/tsd.d.ts" />
 //grunt-end

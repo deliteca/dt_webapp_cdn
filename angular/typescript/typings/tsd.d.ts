@@ -6,3 +6,4 @@
 /// <reference path="angularjs/angular-animate.d.ts" />
 /// <reference path="angularjs/angular-mocks.d.ts" />
 /// <reference path="angularjs/angular-sanitize.d.ts" />
+/// <reference path="lodash/lodash.d.ts" />
