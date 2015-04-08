@@ -26,5 +26,7 @@ module dt {
         return deferred.promise;
       }
     }
+
+    ng.service('UserService', UserService);
   }
 }

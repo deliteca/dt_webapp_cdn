@@ -1,9 +1,9 @@
-/// <reference path="../reference.ts" />
+/// <reference path="../app.ts" />
 
 module dt {
   'use strict';
+
   export module webapp {
-    
     // Register routes
     ng
     .config(function ($routeProvider) {
@@ -17,14 +17,5 @@ module dt {
       });
     });
 
-    
-    // Register controllers
-    ng
-    .controller('MainCtrl', controllers.MainCtrl);
-
-
-    // Register services
-    ng
-    .service('UserService', services.UserService);
   }
 }

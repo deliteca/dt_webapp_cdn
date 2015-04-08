@@ -46,8 +46,12 @@ module.exports = function (grunt) {
         }
       },
       ts: {
-        files: ['typescript/{,*/}*.ts', 'test/spec/{,*/}*.ts'],
+        files: ['typescript/{,*/}*.ts'],
         tasks: ['ts:dev', 'ts:test']
+      },
+      tsTest: {
+        files: ['typescript/{,*/}*.ts', 'test/spec/{,*/}*.ts'],
+        tasks: ['ts:test']
       },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
