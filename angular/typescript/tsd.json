@@ -29,5 +29,8 @@
     "angularjs/angular-sanitize.d.ts": {
       "commit": "2520bce9a8a71b66e67487cbd5b33fec880b0c55"
     },
+    "angular-protractor/angular-protractor.d.ts": {
+      "commit": "8f16b0fd1acd81a555b74f912da849dccc7c9a42"
+    }
   }
 }
