@@ -3,7 +3,7 @@
 module dt.webapp.directives {
   'use strict';
 
-  class NodeList implements ng.IDirective { 
+  class NodeList extends bases.IsolatedDirective {
     scope = {
       nodes: '&list'
     }
@@ -11,10 +11,6 @@ module dt.webapp.directives {
     templateUrl = 'app/components/nodes/node-list.tpl.html';
 
     controller = 'dtWaNodeListCtrl';
-
-    bindToController = true;
-
-    controllerAs = 'ctrl';
   }
 
   class MyController {

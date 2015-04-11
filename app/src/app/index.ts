@@ -1,4 +1,4 @@
-/// <reference path="../../.tmp/typings/tsd.d.ts" />
+/// <reference path="reference.ts" />
 
 module dt.webapp  {
   'use strict';

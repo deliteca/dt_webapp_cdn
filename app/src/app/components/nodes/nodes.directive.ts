@@ -3,7 +3,7 @@
 module dt.webapp.directives {
   'use strict';
 
-  class Nodes implements ng.IDirective { 
+  class Nodes extends bases.IsolatedDirective { 
     scope = {
       uid: '@'
     }
@@ -11,10 +11,6 @@ module dt.webapp.directives {
     templateUrl = 'app/components/nodes/nodes.tpl.html';
 
     controller = 'dtWaNodesCtrl';
-
-    bindToController = true;
-
-    controllerAs = 'ctrl';
   }
 
   class MyController {
