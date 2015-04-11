@@ -8,7 +8,7 @@ module dt.webapp.directives {
       uid: '@'
     }
 
-    templateUrl = 'app/components/nodes/nodes.html';
+    templateUrl = 'app/components/nodes/nodes.tpl.html';
 
     controller = 'dtWebAppNodesCtrl';
 
@@ -19,6 +19,18 @@ module dt.webapp.directives {
 
   class MyController {
     uid : string;
+    fake = {
+      'foo': '/',
+      'children': [['bar', 'foobar'], ['baz', 'foobaz']]
+    }
+
+    name() : string {
+      return this.fake[this.uid];
+    }
+
+    list() {
+      return this.fake['children'];
+    }
   }
 
   angular.module('app').controller('dtWebAppNodesCtrl', MyController);
