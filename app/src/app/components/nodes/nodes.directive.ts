@@ -3,14 +3,12 @@
 module dt.webapp.directives {
   'use strict';
 
-  class Nodes extends bases.IsolatedDirective { 
+  class Nodes extends bases.IsolatedDirective {
     scope = {
       uid: '@'
     }
 
     templateUrl = 'app/components/nodes/nodes.tpl.html';
-
-    controller = 'dtWaNodesCtrl';
   }
 
   class MyController {
@@ -25,10 +23,9 @@ module dt.webapp.directives {
     }
 
     list() {
-      return this.fake['children'];
+      return this.fake.children;
     }
   }
 
-  angular.module('app').controller('dtWaNodesCtrl', MyController);
-  angular.module('app').directive('dtWaNodes', () => new Nodes());
+  register_directive('Nodes', MyController, Nodes);
 }

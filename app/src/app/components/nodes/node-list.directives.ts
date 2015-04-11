@@ -9,8 +9,6 @@ module dt.webapp.directives {
     }
 
     templateUrl = 'app/components/nodes/node-list.tpl.html';
-
-    controller = 'dtWaNodeListCtrl';
   }
 
   class MyController {
@@ -21,6 +19,5 @@ module dt.webapp.directives {
     }
   }
 
-  angular.module('app').controller('dtWaNodeListCtrl', MyController);
-  angular.module('app').directive('dtWaNodeList', () => new NodeList());
+  register_directive('NodeList', MyController, NodeList);
 }
