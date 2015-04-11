@@ -8,7 +8,7 @@ module dt.webapp.directives {
       nodes: '&list'
     }
 
-    templateUrl = 'app/components/nodes/node-list.tpl.html';
+    templateUrl = 'app/components/nodes/node-list.html';
   }
 
   class MyController {

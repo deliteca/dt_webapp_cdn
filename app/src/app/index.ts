@@ -4,7 +4,6 @@ module dt.webapp  {
   'use strict';
 
   var appModule = angular.module('app', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router'])
-
     .config(function ($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
       $stateProvider
       .state('home', {
@@ -15,6 +14,8 @@ module dt.webapp  {
     $urlRouterProvider.otherwise('/');
     });
 
+
+  // Utilities
   export function register_directive(name : string, controller: any, directive: any) {
     directive.prototype.controller = dtAppNameController(name);
     appModule.controller(dtAppNameController(name), controller);
@@ -28,4 +29,6 @@ module dt.webapp  {
   function dtAppNameController(name : string) {
     return dtAppName(name) + 'Ctrl';
   }
+
+
 }

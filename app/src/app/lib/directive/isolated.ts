@@ -1,4 +1,4 @@
-/// <reference path="../reference.ts" />
+/// <reference path="../../reference.ts" />
 
 module  dt.webapp.bases {
   'use strict';

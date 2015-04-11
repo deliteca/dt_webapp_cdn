@@ -8,7 +8,7 @@ module dt.webapp.directives {
       uid: '@'
     }
 
-    templateUrl = 'app/components/nodes/nodes.tpl.html';
+    templateUrl = 'app/components/nodes/nodes.html';
   }
 
   class MyController {
