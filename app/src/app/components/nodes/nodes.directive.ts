@@ -10,7 +10,7 @@ module dt.webapp.directives {
 
     templateUrl = 'app/components/nodes/nodes.tpl.html';
 
-    controller = 'dtWebAppNodesCtrl';
+    controller = 'dtWaNodesCtrl';
 
     bindToController = true;
 
@@ -33,6 +33,6 @@ module dt.webapp.directives {
     }
   }
 
-  angular.module('app').controller('dtWebAppNodesCtrl', MyController);
-  angular.module('app').directive('dtWebAppNodes', () => new Nodes());
+  angular.module('app').controller('dtWaNodesCtrl', MyController);
+  angular.module('app').directive('dtWaNodes', () => new Nodes());
 }
