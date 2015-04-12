@@ -31,6 +31,7 @@ describe('Nodes', function() {
     beforeEach(function() {
       var template = '<div>{{ctrl.name()}}</div>';
       $httpBackend.expectGET('app/components/nodes/nodes.html').respond(template);
+
       var html = angular.element('<dt-wa-nodes uid="foo"></dt-wa-nodes>');
       elm = $compile(html)(scope);
       $httpBackend.flush();
