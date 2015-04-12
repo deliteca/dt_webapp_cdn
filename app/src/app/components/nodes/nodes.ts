@@ -14,16 +14,16 @@ module dt.webapp.directives {
   class MyController {
     uid : string;
     data = {
-      'foo': '/',
-      'children': [['bar', 'foobar'], ['baz', 'foobaz']]
+      'uids': ['bar', 'baz'],
+      'names': ['foobar', 'foobaz']
     }
 
-    name() : string {
-      return this.data[this.uid];
+    getName() : string {
+      return '/';
     }
 
-    list() {
-      return this.data.children;
+    getData() {
+      return this.data;
     }
   }
 

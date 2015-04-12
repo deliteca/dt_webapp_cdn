@@ -11,7 +11,13 @@ var _ = require('lodash');
 
 module.exports = function(options) {
   function listFiles(callback) {
-    var wiredepOptions = _.extend({}, options.wiredep, {
+    var my_wiredep_options = {
+      directory: options.wiredep.directory,
+      exclude: options.wiredep.exclude
+    }
+    
+
+    var wiredepOptions = _.extend({}, my_wiredep_options, {
       dependencies: true,
       devDependencies: true
     });

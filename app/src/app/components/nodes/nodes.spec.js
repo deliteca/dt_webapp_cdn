@@ -23,13 +23,13 @@ describe('Nodes', function() {
   }));
 
   it('should get name', function() {
-    expect(controller.name()).toEqual('/');
+    expect(controller.getName()).toEqual('/');
   });
 
-  describe('testing directive', function() {
+  describe('Nodes directive', function() {
     var elm; 
     beforeEach(function() {
-      var template = '<div>{{ctrl.name()}}</div>';
+      var template = '<div>{{ctrl.getName()}}</div>';
       $httpBackend.expectGET('app/components/nodes/nodes.html').respond(template);
 
       var html = angular.element('<dt-wa-nodes uid="foo"></dt-wa-nodes>');
@@ -38,7 +38,7 @@ describe('Nodes', function() {
       scope.$digest();
     });
 
-    it('should compiled correctly', function() {
+    it('should generate an attr uid', function() {
       expect(elm.attr('uid')).toEqual('foo');
     });
 
