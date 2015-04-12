@@ -13,17 +13,17 @@ module dt.webapp.directives {
 
   class MyController {
     uid : string;
-    fake = {
+    data = {
       'foo': '/',
       'children': [['bar', 'foobar'], ['baz', 'foobaz']]
     }
 
     name() : string {
-      return this.fake[this.uid];
+      return this.data[this.uid];
     }
 
     list() {
-      return this.fake.children;
+      return this.data.children;
     }
   }
 

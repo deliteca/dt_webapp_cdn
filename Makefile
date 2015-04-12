@@ -4,3 +4,6 @@ APP_FOLDER=app
 
 build:
 	(cd $(APP_FOLDER) && gulp build)
+
+tdd:
+	(cd $(APP_FOLDER) && gulp test)

@@ -17,17 +17,17 @@ module dt.webapp  {
 
   // Utilities
   export function register_directive(name : string, controller: any, directive: any) {
-    directive.prototype.controller = dtAppNameController(name);
-    appModule.controller(dtAppNameController(name), controller);
-    appModule.directive(dtAppName(name), () => new directive());
+    directive.prototype.controller = controllerName(name);
+    appModule.controller(controllerName(name), controller);
+    appModule.directive(directiveName(name), () => new directive());
   }
 
-  function dtAppName(name : string) {
+  export function directiveName(name : string) {
     return 'dtWa' + name;
   }
 
-  function dtAppNameController(name : string) {
-    return dtAppName(name) + 'Ctrl';
+  export function controllerName(name : string) {
+    return directiveName(name) + 'Ctrl';
   }
 
 
