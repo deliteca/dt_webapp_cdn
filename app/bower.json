@@ -10,7 +10,9 @@
     "angular-resource": null,
     "angular-ui-router": "~0.2.13",
     "bootstrap-sass-official": "~3.3.1",
-    "angular": null
+    "angular": null,
+    "lodash": "~3.6.0",
+    "angular-lodash": "~0.1.2"
   },
   "devDependencies": {
     "angular-mocks": null

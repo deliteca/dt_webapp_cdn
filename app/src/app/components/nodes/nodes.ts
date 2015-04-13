@@ -23,7 +23,8 @@ module dt.webapp.directives {
     }
 
     getData() {
-      return this.data;
+      var res  = _.zipObject(this.data.uids, this.data.names);
+      return res;
     }
   }
 

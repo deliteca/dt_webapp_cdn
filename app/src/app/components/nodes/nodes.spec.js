@@ -23,6 +23,7 @@ describe('Nodes', function() {
   }));
 
   it('should get name', function() {
+//    console.log(controller.getData());
     expect(controller.getName()).toEqual('/');
   });
 
