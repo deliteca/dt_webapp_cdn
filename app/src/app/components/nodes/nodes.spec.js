@@ -7,15 +7,18 @@ describe('Nodes', function() {
   var $rootScope;
   var controller;
   var $httpBackend;
+  var $templateCache;
   // create mock module
   beforeEach(module('app'));
 
   // inject mocks so lookup the corresponding mock API docs
-  beforeEach(inject(function($controller, _$rootScope_, _$compile_, _$httpBackend_) {
+  beforeEach(inject(function($controller, _$rootScope_, _$compile_, _$httpBackend_, _$templateCache_) {
     $rootScope = _$rootScope_;
     scope = $rootScope.$new();
     $compile = _$compile_;
     $httpBackend = _$httpBackend_;
+    $templateCache = _$templateCache_
+    // create a controller
     controller = $controller(dt.webapp.controllerName('Nodes'),
                              {/* no locals */},
                              { uid : 'foo'} /* bindings */
@@ -23,31 +26,39 @@ describe('Nodes', function() {
   }));
 
   it('should get name', function() {
-//    console.log(controller.getData());
     expect(controller.getName()).toEqual('/');
   });
 
   describe('Nodes directive', function() {
-    var elm; 
-    beforeEach(function() {
-//      var template = '<div>{{ctrl.getName()}}</div>';
- //     $httpBackend.expectGET('app/components/nodes/nodes.html').respond(template);
 
+    function create() {
+      var resp_template = {}; 
+      var url = 'app/components/nodes/node-list.html';
+      var res = $templateCache.get(url) || false;
+      res || $httpBackend.when('GET', url).respond({});
       var html = angular.element('<dt-wa-nodes uid="foo"></dt-wa-nodes>');
-      elm = $compile(html)(scope);
-//      $httpBackend.flush();
+      var elm = $compile(html)(scope);
+      res || $httpBackend.flush();
+      // create a new controller and bind to the directive
       scope.$digest();
-    });
+      return elm;
+    }
 
     it('should generate an attr uid', function() {
+      var elm = create();
       expect(elm.attr('uid')).toEqual('foo');
     });
 
-    it('should have the correct controller binding', function() {
-//      console.log(elm);
-//      expect(elm).toContain('<div class="ng-binding">/</div>');
+    it('should have one dt-wa-node-list element', function() {
+      var elm = create();
+      expect(elm.eq(0).find('dt-wa-node-list').length).toBe(1);
     });
 
+  });
+
+  afterEach(function() {
+    $httpBackend.verifyNoOutstandingExpectation();
+    $httpBackend.verifyNoOutstandingRequest();
   });
 
 });

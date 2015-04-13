@@ -27,26 +27,31 @@ describe('NodeList', function() {
     scope.getData = get_data;
     var html = angular.element(template);
     elm = $compile(html)(scope);
+    // create a new controller and bind to the directive
     scope.$apply();
     return elm;
   }
 
-  it('should return a valid html', function() {
+  it('should have nodes bind to controller', function() {
     var elm = create();
-//    console.log(elm);
-    //console.log(elm.isolateScope().$$isolateBindings.nodes);
     var ctrl = elm.isolateScope().ctrl
     expect(ctrl.nodes).toBeDefined();
+  });
+
+  it('should have 3 ng-repeat', function() {
+    var elm = create();
+    var expected_size = Object.keys(get_data()).length
+    expect(elm.find('[ng-repeat]').length).toBe(expected_size);
   });
 
 });
 
 // Others: could be useful
 //      var template = '<div><ul><li ng-repeat="(key, val) in ctrl.list()">{{key}} {{val}}</li></ul></div>';
-//      $httpBackend.whenGET('app/components/nodes/node-list.html').respond(200, '');
+//      // Use when to fake return
+//      $httpBackend.when('GET', 'app/components/nodes/node-list.html').respond(200, '');
+//      // Use expect to check if there is outstanding request not made
 //      $httpBackend.expectGET('app/components/nodes/node-list.html').respond(template);
-
-
 //      spyOn(controller, 'list').and.callThrough();
 //      $httpBackend.flush();
 //      elm.scope().$apply();
