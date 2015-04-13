@@ -11,8 +11,7 @@
     "angular-ui-router": "~0.2.13",
     "bootstrap-sass-official": "~3.3.1",
     "angular": null,
-    "lodash": "~3.6.0",
-    "angular-lodash": "~0.1.2"
+    "lodash": "~3.6.0"
   },
   "devDependencies": {
     "angular-mocks": null
