@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var cdnizer = require('gulp-cdnizer');
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
@@ -81,9 +82,24 @@ module.exports = function(options) {
       .pipe(gulp.dest(options.dist + '/'));
   });
 
+  gulp.task('cdnify', ['html'], function () {
+    return gulp.src([
+      options.dist + '/index.html',
+    ])
+    .pipe(cdnizer([
+      {
+        file: '**/angular/*.js',
+        cdn: 'cdnjs:angular.js:${ filenameMin }'
+      }
+    ]))
+    .pipe(gulp.dest(options.dist + '/'))
+  });
+
+
   gulp.task('clean', ['tsd:purge'], function (done) {
     $.del([options.dist + '/', options.tmp + '/'], done);
   });
 
   gulp.task('build', ['html', 'fonts', 'other']);
+  gulp.task('build:cdnify', ['cdnify', 'fonts', 'other']);
 };
