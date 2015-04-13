@@ -44,7 +44,7 @@ describe('Nodes', function() {
     });
 
     it('should have the correct controller binding', function() {
-      console.log(elm);
+//      console.log(elm);
 //      expect(elm).toContain('<div class="ng-binding">/</div>');
     });
 

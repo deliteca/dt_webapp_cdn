@@ -7,46 +7,46 @@ describe('NodeList', function() {
   var controller;
   var $httpBackend;
   var get_data = function() {
-    return _.zipObject(['foo', 'bar'], ['foobar', 'foobaz']);
+    return _.zipObject(_.zip(['foo', 'bar'], ['foobar', 'foobaz']));
   }
   // create mock module
   beforeEach(module('app'));
 
-  // inject mocks so lookup the corresponding mock API docs
   beforeEach(inject(function($controller, _$rootScope_, _$compile_, _$httpBackend_) {
     $rootScope = _$rootScope_;
     scope = $rootScope.$new();
     $compile = _$compile_;
     $httpBackend = _$httpBackend_;
-    controller = $controller(dt.webapp.controllerName('NodeList'), {},
-                             {list: get_data}
-                            );
+//    controller = $controller(dt.webapp.controllerName('NodeList'), {},
+//                             {ctrlNodes: get_data});
   }));
 
-  describe('NodeList directive', function() {
+  function create() {
     var elm; 
-    beforeEach(function() {
+    var template = '<dt-wa-node-list list="getData()"></dt-wa-node-list>';
+    scope.getData = get_data;
+    var html = angular.element(template);
+    elm = $compile(html)(scope);
+    scope.$apply();
+    return elm;
+  }
+
+  it('should return a valid html', function() {
+    var elm = create();
+    console.log(elm.isolateScope().$$isolateBindings.nodes);
+    var ctrl = elm.isolateScope().ctrl
+    expect(ctrl.nodes).toBeDefined();
+  });
+
+});
+
+// Others: could be useful
 //      var template = '<div><ul><li ng-repeat="(key, val) in ctrl.list()">{{key}} {{val}}</li></ul></div>';
 //      $httpBackend.whenGET('app/components/nodes/node-list.html').respond(200, '');
 //      $httpBackend.expectGET('app/components/nodes/node-list.html').respond(template);
 
-      var template2 = '<dt-wa-node-list></dt-wa-node-list>';
 
-      var html = angular.element(template2);
-      controller.nodes = get_data;
-      spyOn(controller, 'list');
-      elm = $compile(html)(scope);
+//      spyOn(controller, 'list').and.callThrough();
 //      $httpBackend.flush();
-      scope.$digest();
-    });
+//      elm.scope().$apply();
 
-    it('should return a valid html', function() {
-//      console.log(controller.list());
-      console.log(elm.html());
-//      expect(controller.list).toHaveBeenCalled();
-    });
-
-
-  });
-
-});
