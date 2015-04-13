@@ -23,14 +23,24 @@ module.exports = function(config) {
     plugins : [
       'karma-phantomjs-launcher',
       'karma-jasmine',
+      'karma-coverage',
       'karma-ng-html2js-preprocessor',
       'karma-ng-jade2js-preprocessor'
     ],
 
     preprocessors: {
       'src/**/*.html': ['ng-html2js'],
-      'src/**/*.jade': ['ng-jade2js']
+      'src/**/*.jade': ['ng-jade2js'],
+      '.tmp/**/*.js': ['coverage']
+    },
+
+    reporters: ['progress', 'coverage'],
+
+    coverageReporter: {
+      type: 'text',
+      dir: '.tmp/coverage'
     }
+
   };
 
   // This block is needed to execute Chrome on Travis
