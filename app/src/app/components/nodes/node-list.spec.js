@@ -7,7 +7,7 @@ describe('NodeList', function() {
   var controller;
   var $httpBackend;
   var get_data = function() {
-    return _.zipObject(_.zip(['foo', 'bar'], ['foobar', 'foobaz']));
+    return _.zipObject(['bar', 'baz'], ['foobar', 'foobaz']);
   }
   // create mock module
   beforeEach(module('app'));
@@ -33,7 +33,8 @@ describe('NodeList', function() {
 
   it('should return a valid html', function() {
     var elm = create();
-    console.log(elm.isolateScope().$$isolateBindings.nodes);
+//    console.log(elm);
+    //console.log(elm.isolateScope().$$isolateBindings.nodes);
     var ctrl = elm.isolateScope().ctrl
     expect(ctrl.nodes).toBeDefined();
   });

@@ -14,8 +14,8 @@ module dt.webapp.directives {
   class MyController {
     uid : string;
     data = {
-      'uids': ['bar', 'baz'],
-      'names': ['foobar', 'foobaz']
+      'uids': ['bar', 'baz', 'poo'],
+      'names': ['foobar', 'foobaz', 'foopoo']
     }
 
     getName() : string {
@@ -23,8 +23,7 @@ module dt.webapp.directives {
     }
 
     getData() {
-      var res  = _.zipObject(this.data.uids, this.data.names);
-      return res;
+      return _.zipObject(this.data.uids, this.data.names);
     }
   }
 
