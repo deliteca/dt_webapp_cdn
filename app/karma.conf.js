@@ -9,19 +9,27 @@ module.exports = function(config) {
 
     ngHtml2JsPreprocessor: {
       stripPrefix: 'src/',
-      moduleName: 'gulpAngular'
+      moduleName: 'app'
     },
+
+    ngJade2JsPreprocessor: {
+      stripPrefix: 'src/',
+      moduleName: 'app'
+    },
+
 
     browsers : ['PhantomJS'],
 
     plugins : [
       'karma-phantomjs-launcher',
       'karma-jasmine',
-      'karma-ng-html2js-preprocessor'
+      'karma-ng-html2js-preprocessor',
+      'karma-ng-jade2js-preprocessor'
     ],
 
     preprocessors: {
-      'src/**/*.html': ['ng-html2js']
+      'src/**/*.html': ['ng-html2js'],
+      'src/**/*.jade': ['ng-jade2js']
     }
   };
 

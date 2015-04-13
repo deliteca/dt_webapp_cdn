@@ -26,9 +26,9 @@ describe('NodeList', function() {
   describe('NodeList directive', function() {
     var elm; 
     beforeEach(function() {
-      var template = '<div><ul><li ng-repeat="(key, val) in ctrl.list()">{{key}} {{val}}</li></ul></div>';
+//      var template = '<div><ul><li ng-repeat="(key, val) in ctrl.list()">{{key}} {{val}}</li></ul></div>';
 //      $httpBackend.whenGET('app/components/nodes/node-list.html').respond(200, '');
-      $httpBackend.expectGET('app/components/nodes/node-list.html').respond(template);
+//      $httpBackend.expectGET('app/components/nodes/node-list.html').respond(template);
 
       var template2 = '<dt-wa-node-list></dt-wa-node-list>';
 
@@ -36,7 +36,7 @@ describe('NodeList', function() {
       controller.nodes = get_data;
       spyOn(controller, 'list');
       elm = $compile(html)(scope);
-      $httpBackend.flush();
+//      $httpBackend.flush();
       scope.$digest();
     });
 
