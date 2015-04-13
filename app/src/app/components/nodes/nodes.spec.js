@@ -33,11 +33,10 @@ describe('Nodes', function() {
 
     function create() {
       var url = 'app/components/nodes/node-list.html';
-      var cache = $templateCache.get(url);
-      cache || $httpBackend.when('GET', url).respond('<dt-wa-node-list></dt-wa-node-list>');
+      var cached = dt.webapp.utils.prepareGet($templateCache, $httpBackend, url,  '<dt-wa-node-list></dt-wa-node-list>');
       var html = angular.element('<dt-wa-nodes uid="foo"></dt-wa-nodes>');
       var elm = $compile(html)(scope);
-      cache || $httpBackend.flush();
+      cached || $httpBackend.flush();
       // create a new controller and bind to the directive
       scope.$digest();
       return elm;

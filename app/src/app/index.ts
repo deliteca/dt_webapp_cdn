@@ -17,7 +17,7 @@ module dt.webapp  {
 
 
   // Utilities
-  export function register_directive(name : string, controller: any, directive: any) {
+  export function registerDirective(name : string, controller: any, directive: any) {
     directive.prototype.controller = controllerName(name);
     appModule.controller(controllerName(name), controller);
     appModule.directive(directiveName(name), () => new directive());
@@ -31,5 +31,19 @@ module dt.webapp  {
     return directiveName(name) + 'Ctrl';
   }
 
+}
 
+
+module dt.webapp.utils {
+  'use strict';
+
+  export function prepareGet(
+      $templateCache : ng.ITemplateCacheService,
+      $httpBackend : ng.IHttpBackendService,
+      url : string,
+      respond : string) {
+      var cached = $templateCache.get(url);
+      if (cached) { $httpBackend.when('GET', url).respond(respond); }
+      return cached;
+  }
 }

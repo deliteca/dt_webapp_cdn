@@ -19,5 +19,5 @@ module dt.webapp.directives {
     }
   }
 
-  register_directive('NodeList', MyController, NodeList);
+  registerDirective('NodeList', MyController, NodeList);
 }
