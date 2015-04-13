@@ -17,15 +17,13 @@ describe('NodeList', function() {
     scope = $rootScope.$new();
     $compile = _$compile_;
     $httpBackend = _$httpBackend_;
-//    controller = $controller(dt.webapp.controllerName('NodeList'), {},
-//                             {ctrlNodes: get_data});
   }));
 
   function create() {
     var elm; 
-    var template = '<dt-wa-node-list list="getData()"></dt-wa-node-list>';
+    var html = '<dt-wa-node-list list="getData()"></dt-wa-node-list>';
     scope.getData = get_data;
-    var html = angular.element(template);
+    elm = angular.element(html);
     elm = $compile(html)(scope);
     // create a new controller and bind to the directive
     scope.$apply();
