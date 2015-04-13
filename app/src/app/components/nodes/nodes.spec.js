@@ -34,7 +34,7 @@ describe('Nodes', function() {
     function create() {
       var resp_template = {}; 
       var url = 'app/components/nodes/node-list.html';
-      var res = $templateCache.get(url) || false;
+      var res = $templateCache.get(url);
       res || $httpBackend.when('GET', url).respond({});
       var html = angular.element('<dt-wa-nodes uid="foo"></dt-wa-nodes>');
       var elm = $compile(html)(scope);
