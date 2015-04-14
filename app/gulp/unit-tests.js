@@ -11,7 +11,13 @@ var _ = require('lodash');
 
 module.exports = function(options) {
   function listFiles(callback) {
-    var wiredepOptions = _.extend({}, options.wiredep, {
+    var my_wiredep_options = {
+      directory: options.wiredep.directory,
+      exclude: options.wiredep.exclude
+    }
+    
+
+    var wiredepOptions = _.extend({}, my_wiredep_options, {
       dependencies: true,
       devDependencies: true
     });
@@ -25,6 +31,11 @@ module.exports = function(options) {
     var htmlFiles = [
       options.src + '/**/*.html'
     ];
+
+    var jadeFiles = [
+      options.src + '/**/*.jade'
+    ];
+
 
     var srcFiles = [
       options.tmp + '/serve/app/**/!(index).js',
@@ -40,6 +51,7 @@ module.exports = function(options) {
       .pipe(concat(function(files) {
         callback(bowerDeps.js
           .concat(_.pluck(files, 'path'))
+          .concat(jadeFiles)
           .concat(htmlFiles)
           .concat(specFiles));
       }));
@@ -47,6 +59,7 @@ module.exports = function(options) {
 
   function runTests (singleRun, done) {
     listFiles(function(files) {
+//      files.push('src/**/*.jade');
       karma.server.start({
         configFile: __dirname + '/../karma.conf.js',
         files: files,

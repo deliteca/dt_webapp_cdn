@@ -1,4 +1,6 @@
-module app {
+/// <reference path="../../../.tmp/typings/tsd.d.ts" />
+
+module dt.webapp {
   'use strict';
 
   class Thing {
@@ -21,7 +23,7 @@ module app {
     awesomeThings: Thing[]
   }
 
-  export class MainCtrl {
+  export class MainNavCtrl {
     /* @ngInject */
     constructor ($scope: IMainScope) {
       var awesomeThings = [

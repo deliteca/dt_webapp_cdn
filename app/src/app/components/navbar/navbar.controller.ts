@@ -1,4 +1,5 @@
-module app {
+/// <reference path="../../../../.tmp/typings/tsd.d.ts" />
+module dt.webapp {
   'use strict';
 
   interface INavbarScope extends ng.IScope {
