@@ -1,16 +1,25 @@
 /// <reference path="reference.ts" />
+/// <reference path="main/main.controller.ts" />
+/// <reference path="../app/components/navbar/navbar.controller.ts" />
 
 module dt.webapp  {
   'use strict';
 
-//   var appModule = angular.module('app', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'angular-lodash'])
   var appModule = angular.module('app', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router'])
+    .controller('MainNavCtrl', MainNavCtrl)
+    .controller('NavbarCtrl', NavbarCtrl)
     .config(function ($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
       $stateProvider
-      .state('home', {
+      .state('yeo', {
+        url: '/yeo',
+        templateUrl: 'app/main/main-nav.html',
+        controller: 'MainNavCtrl'
+      })
+    .state('home', {
         url: '/',
         templateUrl: 'app/main/main.html'
       });
+
 
     $urlRouterProvider.otherwise('/');
     });
