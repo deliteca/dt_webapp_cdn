@@ -2,22 +2,18 @@
   "name": "app",
   "version": "0.0.0",
   "dependencies": {
-    "angular-animate": null,
-    "angular-cookies": null,
-    "angular-touch": null,
-    "angular-sanitize": null,
     "jquery": "~2.1.1",
     "angular-resource": null,
     "angular-ui-router": "~0.2.13",
-    "bootstrap-sass-official": "~3.3.1",
-    "angular": null,
-    "lodash": "~3.6.0"
+    "angular": "master",
+    "lodash": "~3.6.0",
+    "polymer": "~0.8.0"
   },
   "devDependencies": {
     "angular-mocks": null
   },
   "resolutions": {
     "jquery": "~2.1.1",
-    "angular": null
+    "angular": "master"
   }
 }

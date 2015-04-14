@@ -5,7 +5,7 @@
 module dt.webapp  {
   'use strict';
 
-  var appModule = angular.module('app', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router'])
+  var appModule = angular.module('app', ['ngResource', 'ui.router'])
     .controller('MainNavCtrl', MainNavCtrl)
     .controller('NavbarCtrl', NavbarCtrl)
     .config(function ($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
