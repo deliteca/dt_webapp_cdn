@@ -32,7 +32,7 @@ describe('Nodes', function() {
   describe('Nodes directive', function() {
 
     function create() {
-      var url = 'app/components/nodes/node-list.html';
+      var url = 'app/components/checklist/node-list.html';
       var cached = dt.webapp.utils.prepareGet($templateCache, $httpBackend, url,  '<dt-wa-node-list></dt-wa-node-list>');
       var html = angular.element('<dt-wa-nodes uid="foo"></dt-wa-nodes>');
       var elm = $compile(html)(scope);
