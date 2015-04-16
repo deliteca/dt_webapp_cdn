@@ -15,10 +15,19 @@ module dt.webapp  {
         url: '/',
         views: {
           'main-content': {
-            templateUrl: 'app/main/main.html'
+            templateUrl: 'app/main/home.html'
+          }
+        }
+      })
+      .state('admin', {
+        url: '/admin',
+        views: {
+          'main-content': {
+            templateUrl: 'app/main/admin.html'
           }
         }
       });
+
 
     $urlRouterProvider.otherwise('/');
   }
@@ -27,7 +36,7 @@ module dt.webapp  {
   function attach_state_to_scope($rootScope: any, $state: any, $stateParams: any) {
     // state object
     $rootScope.$state = $state;
-    
+
     // parameters that pass as part of href
     $rootScope.$stateParams = $stateParams;
   }
@@ -47,19 +56,4 @@ module dt.webapp  {
     return directiveName(name) + 'Ctrl';
   }
 
-}
-
-
-module dt.webapp.utils {
-  'use strict';
-
-  export function prepareGet(
-      $templateCache : ng.ITemplateCacheService,
-      $httpBackend : ng.IHttpBackendService,
-      url : string,
-      respond : string) {
-        var cached = $templateCache.get(url);
-        if (cached) { $httpBackend.when('GET', url).respond(respond); }
-        return cached;
-      }
 }

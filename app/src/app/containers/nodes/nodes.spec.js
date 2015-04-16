@@ -1,5 +1,5 @@
 /// <reference path="../../reference.ts" />
-'use strict';
+/// <reference path="../../reference.spec.common.ts" />
 
 describe('Nodes', function() {
   var scope;
