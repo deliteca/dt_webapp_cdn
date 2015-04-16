@@ -6,25 +6,21 @@
 module dt.webapp  {
   'use strict';
 
-//   var appModule = angular.module('app', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'angular-lodash'])
+  //   var appModule = angular.module('app', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'angular-lodash'])
   var appModule = angular.module('app', ['ngResource', 'ui.router', 'ngMaterial'])
     .controller('MainNavCtrl', MainNavCtrl)
     .controller('NavbarCtrl', NavbarCtrl)
     .config(function ($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
       $stateProvider
-      .state('yeo', {
-        url: '/yeo',
-//        templateUrl: 'app/main/main.html'
+      .state('demos', {
+        url: '/dev/demos/yeo',
         templateUrl: 'app/main/main-nav.html',
-        controller: 'MainNavCtrl'
-      })
+        controller: 'MainNavCtrl'})
       .state('home', {
         url: '/',
         templateUrl: 'app/main/main.html'
       });
-
-
-    $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/');
     });
 
 
@@ -54,8 +50,8 @@ module dt.webapp.utils {
       $httpBackend : ng.IHttpBackendService,
       url : string,
       respond : string) {
-      var cached = $templateCache.get(url);
-      if (cached) { $httpBackend.when('GET', url).respond(respond); }
-      return cached;
-  }
+        var cached = $templateCache.get(url);
+        if (cached) { $httpBackend.when('GET', url).respond(respond); }
+        return cached;
+      }
 }

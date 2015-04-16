@@ -1,3 +1,12 @@
 include ../reference.jade
-md-content
-  #{dtWebAppDirective('Nodes')}(uid="foo")
+div(layout="column" layout-fill)
+  md-toolbar(layout="row")
+    md-button(class="menu" aria-label="Show Available Apps")
+      md-icon(md-svg-icon="menu")
+    h1 Delite WebApp
+  div(flex layout="row")
+    md-sidenav(class="md-whiteframe-z2" md-component-id="left")
+      md-list
+        md-item Admin
+    md-content(flex id="content")
+      #{dtWebAppDirective('Nodes')}(uid="foo")
