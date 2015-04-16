@@ -1,28 +1,36 @@
 /// <reference path="reference.ts" />
-/// <reference path="main/main.controller.ts" />
-/// <reference path="../app/components/navbar/navbar.controller.ts" />
 
 
 module dt.webapp  {
   'use strict';
 
-  //   var appModule = angular.module('app', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'angular-lodash'])
   var appModule = angular.module('app', ['ngResource', 'ui.router', 'ngMaterial'])
-    .controller('MainNavCtrl', MainNavCtrl)
-    .controller('NavbarCtrl', NavbarCtrl)
-    .config(function ($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
-      $stateProvider
-      .state('demos', {
-        url: '/dev/demos/yeo',
-        templateUrl: 'app/main/main-nav.html',
-        controller: 'MainNavCtrl'})
+    .config(configure_routes)
+    .run(attach_state_to_scope);
+
+  /*@ngInject*/
+  function configure_routes($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
+    $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/main/main.html'
+        views: {
+          'main-content': {
+            templateUrl: 'app/main/main.html'
+          }
+        }
       });
-      $urlRouterProvider.otherwise('/');
-    });
 
+    $urlRouterProvider.otherwise('/');
+  }
+
+  /*@ngInject*/
+  function attach_state_to_scope($rootScope: any, $state: any, $stateParams: any) {
+    // state object
+    $rootScope.$state = $state;
+    
+    // parameters that pass as part of href
+    $rootScope.$stateParams = $stateParams;
+  }
 
   // Utilities
   export function registerDirective(name : string, controller: any, directive: any) {
