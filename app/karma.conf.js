@@ -19,19 +19,26 @@ module.exports = function(config) {
 
 
     browsers : ['PhantomJS'],
+/*
+    browserify : {
+      debug: true
+    },
+    */
 
     plugins : [
       'karma-phantomjs-launcher',
       'karma-jasmine',
       'karma-coverage',
       'karma-ng-html2js-preprocessor',
-      'karma-ng-jade2js-preprocessor'
+      'karma-ng-jade2js-preprocessor',
+      'karma-sourcemap-loader'
     ],
 
     preprocessors: {
       'src/**/*.html': ['ng-html2js'],
       'src/**/*.jade': ['ng-jade2js'],
-      '.tmp/**/*.js': ['coverage']
+      '.tmp/**/*.js': ['coverage', 'sourcemap'],
+      'src/**/*.js': ['sourcemap']
     },
 
     reporters: ['progress', 'coverage'],
