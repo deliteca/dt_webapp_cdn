@@ -4,31 +4,12 @@
 module dt.webapp  {
   'use strict';
 
-  var appModule = angular.module('app', ['ngResource', 'ui.router', 'ngMaterial'])
+  var appModule = angular.module('dt.webapp', ['dt.wa.admin', 'dt.wa.home'])
     .config(configure_routes)
     .run(attach_state_to_scope);
 
   /*@ngInject*/
   function configure_routes($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        views: {
-          'main-content': {
-            templateUrl: 'app/main/home.html'
-          }
-        }
-      })
-      .state('admin', {
-        url: '/admin',
-        views: {
-          'main-content': {
-            templateUrl: 'app/main/admin.html'
-          }
-        }
-      });
-
-
     $urlRouterProvider.otherwise('/');
   }
 
