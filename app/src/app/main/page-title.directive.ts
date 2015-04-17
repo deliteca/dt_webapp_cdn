@@ -5,7 +5,6 @@ module dt.webapp.directives {
 
   class PageTitle implements ng.IDirective {
 
-    /*@ngInject*/
     constructor(private $rootScope: any, private $timeout: any) {
     }
 
@@ -24,12 +23,6 @@ module dt.webapp.directives {
       this.$rootScope.$on('$stateChangeSuccess', listener);
     }
   }
-
-//  var appModule = angular.module('dt.webapp');
-
-//  appModule.directive(dt.webapp.directiveName('PageTitle'), ['$rootScope', '$timeout', ($rootScope, $timeout) => {
-//    return new PageTitle($rootScope, $timeout);
-//  }]);
 
   dt.webapp.registerDirective('PageTitle', null, PageTitle, ['$rootScope', '$timeout']);
 

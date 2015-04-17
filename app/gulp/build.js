@@ -1,5 +1,6 @@
 'use strict';
 
+var moduleName='dt.webapp';
 var gulp = require('gulp');
 var cdnizer = require('gulp-cdnizer');
 
@@ -19,7 +20,7 @@ module.exports = function(options) {
         quotes: true
       }))
       .pipe($.angularTemplatecache('templateCacheHtml.js', {
-        module: 'app',
+        module: moduleName,
         root: 'app'
       }))
       .pipe(gulp.dest(options.tmp + '/partials/'));
