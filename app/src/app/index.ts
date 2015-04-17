@@ -23,10 +23,28 @@ module dt.webapp  {
   }
 
   // Utilities
-  export function registerDirective(name : string, controller: any, directive: any) {
-    directive.prototype.controller = controllerName(name);
-    appModule.controller(controllerName(name), controller);
-    appModule.directive(directiveName(name), () => new directive());
+  export function registerDirective(name : string, controller: any, directive: any, inject: Array<string> = null) {
+
+    if (controller) {
+      directive.prototype.controller = controllerName(name);
+      appModule.controller(controllerName(name), controller);
+    }
+
+    if (inject) {
+      var _new = (klass: any, args: any) => {
+        var o = Object.create(klass.prototype);
+        return klass.apply(o, args) || o;
+      };
+
+      var _directive_factory = (...args: any[]) => {
+        return _new(directive, args);
+      };
+
+      _directive_factory.$inject = inject;
+      appModule.directive(directiveName(name), _directive_factory);
+    } else {
+      appModule.directive(directiveName(name), () => new directive());
+    }
   }
 
   export function directiveName(name : string) {

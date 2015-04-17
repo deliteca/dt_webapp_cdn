@@ -9,7 +9,7 @@ describe('Nodes', function() {
   var $httpBackend;
   var $templateCache;
   // create mock module
-  beforeEach(module('app'));
+  beforeEach(module('dt.webapp'));
 
   // inject mocks so lookup the corresponding mock API docs
   beforeEach(inject(function($controller, _$rootScope_, _$compile_, _$httpBackend_, _$templateCache_) {

@@ -2,9 +2,10 @@
 
 module dt.webapp.home  {
   'use strict';
-  var appModule = angular.module('dt.wa.home', ['ui.router', 'ngMaterial', 'ngResource'])
+  angular.module('dt.wa.home', ['ui.router', 'ngMaterial', 'ngResource'])
     .config(configure_routes);
 
+  /*@ngInject*/
   function configure_routes($stateProvider: ng.ui.IStateProvider) {
     $stateProvider
       .state('home', {

@@ -10,7 +10,7 @@ describe('NodeList', function() {
     return _.zipObject(['bar', 'baz'], ['foobar', 'foobaz']);
   }
   // create mock module
-  beforeEach(module('app'));
+  beforeEach(module('dt.webapp'));
 
   beforeEach(inject(function($controller, _$rootScope_, _$compile_, _$httpBackend_) {
     $rootScope = _$rootScope_;
@@ -24,7 +24,7 @@ describe('NodeList', function() {
     var html = '<dt-wa-node-list list="getData()"></dt-wa-node-list>';
     scope.getData = get_data;
     elm = angular.element(html);
-    elm = $compile(html)(scope);
+    elm = $compile(elm)(scope);
     // create a new controller and bind to the directive
     scope.$apply();
     return elm;
