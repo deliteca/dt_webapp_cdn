@@ -2,7 +2,7 @@
 
 module dt.webapp.home  {
   'use strict';
-  angular.module('dt.wa.home', ['ui.router', 'ngMaterial', 'ngResource'])
+  angular.module('dt.wa.home', ['ui.router'])
     .config(configure_routes);
 
   /*@ngInject*/

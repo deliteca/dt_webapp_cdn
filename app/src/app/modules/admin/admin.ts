@@ -2,7 +2,7 @@
 
 module dt.webapp.admin  {
   'use strict';
-  angular.module('dt.wa.admin', ['ui.router', 'ngMaterial', 'ngResource'])
+  angular.module('dt.wa.admin', ['ui.router'])
     .config(configure_routes);
 
   /*@ngInject*/
