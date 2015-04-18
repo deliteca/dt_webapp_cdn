@@ -30,15 +30,13 @@ module.exports = function(config) {
       'karma-jasmine',
       'karma-coverage',
       'karma-ng-html2js-preprocessor',
-      'karma-ng-jade2js-preprocessor',
-      'karma-sourcemap-loader'
+      'karma-ng-jade2js-preprocessor'
     ],
 
     preprocessors: {
       'src/**/*.html': ['ng-html2js'],
       'src/**/*.jade': ['ng-jade2js'],
-      '.tmp/**/*.js': ['coverage', 'sourcemap'],
-      'src/**/*.js': ['sourcemap']
+      '.tmp/**/*.js': ['coverage'],
     },
 
     reporters: ['progress', 'coverage'],
