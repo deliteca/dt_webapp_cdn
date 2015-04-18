@@ -5,12 +5,13 @@ module dt.webapp.directives {
 
   class PageTitle implements ng.IDirective {
 
-    constructor(private $rootScope: any, private $timeout: any) {
+    constructor(private $rootScope, private $timeout) {
     }
 
-    link = (scope: ng.IScope, element: ng.IRootElementService) => {
+    link = (scope, element, attrs) => {
       var listener = (event: any, toState: any) => {
-        var title = 'Delite';
+
+        var title = attrs.prefix || 'Delite';
         if (toState.data && toState.data.pageTitle) {
           title = title + ' - ' + toState.data.pageTitle;
         }
