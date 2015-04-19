@@ -1,0 +1,10 @@
+=dt-box-sizing($box)
+  +prefixer(box-sizing, $box, webkit moz spec)
+
+=dt-button-creator($bg-color)
+  @extend %dt-button
+  background-color: $bg-color
+
+  &:hover,
+  &:focus
+    background-color: darken($bg-color, 15%)

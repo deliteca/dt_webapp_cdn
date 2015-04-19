@@ -1,0 +1,34 @@
+include ../../lib/jade/utils.jade
+
+- var MENUS=['Products', 'About Us', 'Contacts', 'More'];
+- var JSVOID="javascript:void(0)";
+
+header(class="navigation" role="banner")
+  .navigation-wrapper
+    +link(JSVOID).logo
+      img(src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image")
+    a(href=JSVOID).navigation-menu-button#js-mobile-menu MENU
+    nav(role="navigation")
+      ul.navigation-menu.show#js-navigation-menu
+        li.nav-link: +link(JSVOID, MENUS[0])
+        li.nav-link: +link(JSVOID, MENUS[1])
+        li.nav-link: +link(JSVOID, MENUS[2])
+        li.nav-link: +link(JSVOID, MENUS[3])
+          ul.submenu
+            li: +link(JSVOID, 'Submenu Item')
+            li: +link(JSVOID, 'Another Item')
+            li: +link(JSVOID, 'Item with submenu')
+              ul(class="submenu")
+                li: +link(JSVOID, 'Sub-submenu Item')
+                li: +link(JSVOID, 'Another Item')
+            li: +link(JSVOID, 'Another Submenu')
+              ul.submenu
+                li: +link(JSVOID, 'Sub-submenu')
+                li: +link(JSVOID, 'An item')
+    .navigation-tools
+      .search-bar
+        form(role="search")
+          input(type="search" placeholder="Enter Search")
+          button(type="submit")
+            img(src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon")
+      +link(JSVOID, "Sign Up").sign-up
