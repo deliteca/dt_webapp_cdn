@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "angular-ui-router": "~0.2.13",
-    "angular": null,
-    "normalize.css": "~3.0.3"
+    "angular": null
   },
   "devDependencies": {
     "lodash": "~3.6.0",
