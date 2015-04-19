@@ -1,3 +1,7 @@
 - var dtWebAppDirective = function(name) {
 -   return 'dt-wa-' + name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase(); 
 - }
+
+mixin link(href, name)
+  a(class!=attributes.class, href=href)= name
+    block

@@ -16,6 +16,8 @@ module.exports = function(options) {
     var injectFiles = gulp.src([
       options.src + '/app/**/*.scss',
       options.src + '/app/**/*.sass',
+      '!' + options.src + '/app/**/_*.scss',
+      '!' + options.src + '/app/**/_*.sass',
       '!' + options.src + '/app/index.scss',
       '!' + options.src + '/app/vendor.scss'
     ], { read: false });
