@@ -32,11 +32,6 @@ module.exports = function(options) {
       options.src + '/**/*.html'
     ];
 
-    var jadeFiles = [
-      options.src + '/**/*.jade'
-    ];
-
-
     var srcFiles = [
       options.tmp + '/serve/app/**/!(index).js',
       options.tmp + '/serve/app/**/index.js'
@@ -51,7 +46,6 @@ module.exports = function(options) {
       .pipe(concat(function(files) {
         callback(bowerDeps.js
           .concat(_.pluck(files, 'path'))
-          .concat(jadeFiles)
           .concat(htmlFiles)
           .concat(specFiles));
       }));
@@ -59,7 +53,6 @@ module.exports = function(options) {
 
   function runTests (singleRun, done) {
     listFiles(function(files) {
-//      files.push('src/**/*.jade');
       karma.server.start({
         configFile: __dirname + '/../karma.conf.js',
         files: files,

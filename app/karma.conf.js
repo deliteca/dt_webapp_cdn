@@ -35,7 +35,7 @@ module.exports = function(config) {
 
     preprocessors: {
       'src/**/*.html': ['ng-html2js'],
-      'src/**/{*.jade,!(_*).jade}': ['ng-jade2js'],
+      'src/**/!(_)*.jade': ['ng-jade2js'],
       '.tmp/**/*.js': ['coverage'],
     },
 
