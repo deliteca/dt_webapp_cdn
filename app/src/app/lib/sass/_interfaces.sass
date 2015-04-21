@@ -1,0 +1,23 @@
+%dt-flexbox
+  +display(flex)
+
+%flexbox-column
+  @extend %dt-flexbox
+  +flex-direction(column)
+
+%flexbox-row
+  @extend %dt-flexbox
+  +flex-direction(row)
+
+%nav-menu
+  @extend %flexbox-row
+  +justify-content(center)
+  +padding(0 0 0 0)
+
+%nav-menu-item
+  // no bullet
+
+  list-style-type: none
+  a
+    // turn off underline
+    text-decoration: none 

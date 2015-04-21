@@ -5,3 +5,4 @@ bower_components/
 dist/
 typings/
 tsd.json
+__*.sample.*

@@ -2,6 +2,8 @@
 -   return 'dt-wa-' + name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase(); 
 - }
 
+- var JSVOID="javascript:void(0)";
+
 mixin link(href, name)
   a(class!=attributes.class, href=href)= name
     block

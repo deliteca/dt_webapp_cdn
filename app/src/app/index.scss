@@ -1,13 +1,14 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css);
 // @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
-// @import url(http:////maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 // $fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts";
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../../bower_components/neat/app/assets/stylesheets/neat";
 @import "../../bower_components/bitters/app/assets/stylesheets/variables";
+// @import "../../bower_components/sass-css3-mixins/css3-mixins";
 // @import "../../bower_components/bitters/app/assets/stylesheets/buttons";
-@import "lib/sass/buttons";
+// @import "lib/sass/buttons";
 @import "lib/sass/utils";
 
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
