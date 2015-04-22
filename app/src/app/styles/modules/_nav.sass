@@ -3,10 +3,18 @@
 
   &-global
     @extend %nav
+    border-color: $tertiary-color-wbg
+    background-color: $tertiary-color-wbg
+    border-width: 1px
     &--menuItem
       @extend %nav--menuItem
+      color: $attention-color-bbg
 
   &-section
     @extend %nav
+    +border-width(0 0 1px 0)
+    border-color: $divider-color-wbg
+    background-color: white
     &--menuItem
       @extend %nav--menuItem
+      color: $primary-color-wbg
