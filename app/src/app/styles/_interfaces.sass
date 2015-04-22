@@ -1,0 +1,17 @@
+%dt-flex
+  +display(flex)
+
+%flex-col
+  @extend %dt-flex
+  +flex-direction(column)
+
+%flex-row
+  @extend %dt-flex
+  +flex-direction(row)
+
+%nav
+  @extend %flex-row
+  +justify-content(center)
+
+%nav--menuItem
+  +margin(null $nav-item-space null $nav-item-space)

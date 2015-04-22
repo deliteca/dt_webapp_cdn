@@ -1,7 +1,9 @@
-/// <reference path="../reference.ts" />
+/// <reference path="../../../index.ts" />
 
 module dt.webapp.directives {
   'use strict';
+
+  import utils = dt.webapp.utils;
 
   class PageTitle implements ng.IDirective {
 
@@ -25,6 +27,8 @@ module dt.webapp.directives {
     }
   }
 
-  dt.webapp.registerDirective('PageTitle', null, PageTitle, ['$rootScope', '$timeout']);
+  var appModule = angular.module('dt.wa.directives.page-title', ['ui.router']);
+
+  utils.registerDirective(appModule, 'PageTitle', null, PageTitle, ['$rootScope', '$timeout']);
 
 }

@@ -1,4 +1,5 @@
-/// <reference path="../reference.ts" />
+/// <reference path="../../../index.ts" />
+
 'use strict';
 
 describe('Page Title:', function() {
@@ -9,7 +10,7 @@ describe('Page Title:', function() {
     data: {pageTitle: 'foo'}
   };
 
-  beforeEach(module('dt.webapp'));
+  beforeEach(module('dt.wa.directives.page-title'));
 
   beforeEach(module(function($stateProvider) {
     stateProvider = $stateProvider;
@@ -35,8 +36,6 @@ describe('Page Title:', function() {
   }
 
   it('should be "title" by default', inject(function($state, $timeout) {
-    httpBackend.when('GET', 'app/modules/home/home.html').respond({});
-    httpBackend.when('GET', 'app/modules/home/tabs.html').respond({});
 
     var html = '<div dt-wa-page-title prefix="bar"></div>';
     
