@@ -16,6 +16,8 @@ pip install -r $pip_reqs
 if [ -z $NODE_PATH ]; then
     ln -s /opt/local/bin/python2.7 $VIRTUAL_ENV/bin/python2
     nodeenv -p
+    npm install -g yo gulp bower
+    npm install -g generator-gulp-angular
 fi
 
 deactivate
